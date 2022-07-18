@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Numtype } from 'num-type';
 import { NUMBER } from 'numbering';
 
@@ -7,7 +7,7 @@ import { NUMBER } from 'numbering';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss'],
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent {
   board: Numtype[] = NUMBER;
   text: string = '';
   xIsNext: boolean = true;
@@ -25,7 +25,6 @@ export class BoardComponent implements OnInit {
     [2, 4, 6],
   ];
   constructor() {}
-  ngOnInit(): void {}
   refresh() {
     this.board = NUMBER;
     this.text = '';

@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-square',
   templateUrl: './square.component.html',
   styleUrls: ['./square.component.scss'],
 })
-export class SquareComponent implements OnInit {
+export class SquareComponent {
   @Input() color: string = 'grey';
   @Input() text: 'X' | 'O' | '' = '';
   @Input() num: number | undefined;
@@ -13,7 +13,6 @@ export class SquareComponent implements OnInit {
   @Output() onClickSquare = new EventEmitter();
   constructor() {}
 
-  ngOnInit(): void {}
   onClick() {
     this.onClickSquare.emit();
   }
