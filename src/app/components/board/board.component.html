@@ -1,0 +1,19 @@
+<div class="refresh">
+  <button (click)="refresh()" class="button-1">New Game</button>
+</div>
+
+<div>
+  <h1>{{ winner }}</h1>
+</div>
+
+<div class="grid">
+  <span *ngFor="let num of board; index as i">
+    <app-square
+      [num]="num.id"
+      (onClickSquare)="changeText(i)"
+      [value]="num.isClicked"
+      [text]="num.value"
+      [color]="num.color"
+    ></app-square>
+  </span>
+</div>
